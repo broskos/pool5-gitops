@@ -56,7 +56,7 @@ metadata:
   namespace: assisted-installer
   labels:
     # InfraEnv to use
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: master
@@ -66,7 +66,7 @@ spec:
   bootMACAddress: 52:40:00:11:22:11
   automatedCleaningMode: disabled
   bmc:
-    address: redfish-virtualmedia+http://mgmt2.ran1.roskosb.info:8082/redfish/v1/Systems/107b9135-996f-4f6d-a99d-174948b9d305
+    address: redfish-virtualmedia+http://mgmt2.ran1.pool5.roskosb.info:8082/redfish/v1/Systems/107b9135-996f-4f6d-a99d-174948b9d305
     credentialsName: bmc-super1-vm-skylark-cars-lab
     disableCertificateVerification: True
 ---
@@ -76,7 +76,7 @@ metadata:
   name: super2-vm-skylark-cars-lab
   namespace: assisted-installer
   labels:
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: master
@@ -86,7 +86,7 @@ spec:
   bootMACAddress: 52:40:00:11:22:22
   automatedCleaningMode: disabled
   bmc:
-    address: redfish-virtualmedia+http://mgmt2.ran1.roskosb.info:8082/redfish/v1/Systems/bd024e36-15aa-4e8f-a361-f07e367d6ad6
+    address: redfish-virtualmedia+http://mgmt2.ran1.pool5.roskosb.info:8082/redfish/v1/Systems/bd024e36-15aa-4e8f-a361-f07e367d6ad6
     credentialsName: bmc-super2-vm-skylark-cars-lab
     disableCertificateVerification: True
 ---
@@ -96,7 +96,7 @@ metadata:
   name: super3-vm-skylark-cars-lab
   namespace: assisted-installer
   labels:
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: master
@@ -106,7 +106,7 @@ spec:
   bootMACAddress: 52:40:00:11:22:33
   automatedCleaningMode: disabled
   bmc:
-    address: redfish-virtualmedia+http://mgmt2.ran1.roskosb.info:8082/redfish/v1/Systems/cce818f4-9cf0-4777-b16e-30a340361dbb
+    address: redfish-virtualmedia+http://mgmt2.ran1.pool5.roskosb.info:8082/redfish/v1/Systems/cce818f4-9cf0-4777-b16e-30a340361dbb
     credentialsName: bmc-super3-vm-skylark-cars-lab
     disableCertificateVerification: True
 ---
@@ -116,7 +116,7 @@ metadata:
   name: cu2-skylark-cars-lab
   namespace: assisted-installer
   labels:
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: worker
@@ -136,7 +136,7 @@ metadata:
   name: mgmt1-skylark-cars-lab
   namespace: assisted-installer
   labels:
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: worker

@@ -3,7 +3,7 @@
 apiVersion: extensions.hive.openshift.io/v1beta1
 kind: AgentClusterInstall
 metadata:
-  name: aci-ran1-roskosb-info
+  name: aci-ran1-pool5-roskosb-info
   namespace: assisted-installer
   annotations:
     agent-install.openshift.io/install-config-overrides: '{"networking":{"networkType":"OVNKubernetes"}}'
@@ -11,12 +11,12 @@ spec:
   apiVIP: 172.17.0.98
   ingressVIP: 172.17.0.99
   clusterDeploymentRef:
-    name: aci-ran1-roskosb-info
+    name: aci-ran1-pool5-roskosb-info
   imageSetRef:
 #    name: openshift-v4.9.0-nightly
     name: openshift-v4.8.5
 #  manifestsConfigMapRef:
-#    name: cm-overrides-ran1-roskosb-info
+#    name: cm-overrides-ran1-pool5-roskosb-info
   networking:
     clusterNetwork:
       - cidr: "10.128.0.0/14"

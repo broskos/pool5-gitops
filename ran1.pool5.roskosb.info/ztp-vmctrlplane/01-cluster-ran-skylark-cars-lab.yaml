@@ -2,7 +2,7 @@
 apiVersion: hive.openshift.io/v1
 kind: ClusterDeployment
 metadata:
-  name: cluster-ran1-roskosb-info
+  name: cluster-ran1-pool5-roskosb-info
   namespace: assisted-installer
 spec:
   baseDomain: cars.lab
@@ -12,12 +12,12 @@ spec:
   clusterInstallRef:
     group: extensions.hive.openshift.io
     kind: AgentClusterInstall
-    name: aci-ran1-roskosb-info
+    name: aci-ran1-pool5-roskosb-info
     version: v1beta1
   platform:
     agentBareMetal:
       agentSelector:
         matchLabels:
-          telco-rwn: ran1-roskosb-info
+          telco-rwn: ran1-pool5-roskosb-info
   pullSecretRef:
     name: assisted-deployment-pull-secret

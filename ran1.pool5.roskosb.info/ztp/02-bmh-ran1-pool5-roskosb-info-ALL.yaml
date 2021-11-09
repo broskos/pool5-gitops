@@ -2,31 +2,31 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: bmc-super1-ran1-roskosb-info
+  name: bmc-super1-ran1-pool5-roskosb-info
   namespace: assisted-installer
 data:
-  username: QURNSU4=
-  password: QURNSU4=
+  username: cm9vdA==
+  password: cG9vbDVkcmFj
 type: Opaque
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: bmc-super2-ran1-roskosb-info
+  name: bmc-super2-ran1-pool5-roskosb-info
   namespace: assisted-installer
 data:
-  username: QURNSU4=
-  password: QURNSU4=
+  username: cm9vdA==
+  password: cG9vbDVkcmFj
 type: Opaque
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: bmc-super3-ran1-roskosb-info
+  name: bmc-super3-ran1-pool5-roskosb-info
   namespace: assisted-installer
 data:
-  username: QURNSU4=
-  password: QURNSU4=
+  username: cm9vdA==
+  password: cG9vbDVkcmFj
 type: Opaque
 #---
 #apiVersion: v1
@@ -35,8 +35,8 @@ type: Opaque
 #  name: bmc-cu2-ran1-roskosb-in
 #  namespace: assisted-installer
 #data:
-#  username: QURNSU4=
-#  password: QURNSU4=
+#  username: cm9vdA==
+#  password: cG9vbDVkcmFj
 #type: Opaque
 #---
 #apiVersion: v1
@@ -45,8 +45,8 @@ type: Opaque
 #  name: bmc-mgmt1-ran1-roskosb-in
 #  namespace: assisted-installer
 #data:
-#  username: QURNSU4=
-#  password: QURNSU4=
+#  username: cm9vdA==
+#  password: cG9vbDVkcmFj
 #type: Opaque
 #---
 #apiVersion: v1
@@ -55,7 +55,7 @@ type: Opaque
 #  name: bmc-du1-fec2-ran1-roskosb-in
 #  namespace: assisted-installer
 #data:
-#  username: QURNSU4=
+#  username: cm9vdA==
 #  password: YWx0aW9zdGFyITIz
 #type: Opaque
 #---
@@ -65,18 +65,18 @@ type: Opaque
 #  name: bmc-du1-ldc1-ran1-roskosb-in
 #  namespace: assisted-installer
 #data:
-#  username: QURNSU4=
+#  username: cm9vdA==
 #  password: YWx0aW9zdGFyITIz
 #type: Opaque
 ---
 apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
-  name: super1-ran1-roskosb-info
+  name: super1-ran1-pool5-roskosb-info
   namespace: assisted-installer
   labels:
     # InfraEnv to use
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: master
@@ -87,55 +87,55 @@ metadata:
     #bmac.agent-install.openshift.io/ignition-config-overrides: '{"ignition": {"version": "3.1.0"}, "storage": {"files": [{"path": "/tmp/example", "contents": {"source": "data:text/plain;base64,aGVscGltdHJhcHBlZGluYXN3YWdnZXJzcGVj"}}]}}'
 spec:
   online: true
-  bootMACAddress: 40:A6:B7:51:9F:70
+  bootMACAddress: E4:43:4B:4E:40:2D
   automatedCleaningMode: disabled
   bmc:
     # https://github.com/metal3-io/baremetal-operator/blob/master/docs/api.md
-    address: redfish-virtualmedia://192.168.200.10/redfish/v1/Systems/1/
-    credentialsName: bmc-super1-ran1-roskosb-info
+    address: idrac-virtualmedia://10.1.177.51/redfish/v1/Systems/System.Embedded.1
+    credentialsName: bmc-super1-ran1-pool5-roskosb-info
     disableCertificateVerification: True
 
-# oc delete -f 02-bmh-ran1-roskosb-info.yaml ; sleep 3 ; oc create -f 02-bmh-ran1-roskosb-info.yaml
-# watch -c "oc get bmh pool5-ran1-roskosb-info -o jsonpath='{.status}' | jq . "
+# oc delete -f 02-bmh-ran1-pool5-roskosb-info.yaml ; sleep 3 ; oc create -f 02-bmh-ran1-pool5-roskosb-info.yaml
+# watch -c "oc get bmh pool5-ran1-pool5-roskosb-info -o jsonpath='{.status}' | jq . "
 ---
 apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
-  name: super2-ran1-roskosb-info
+  name: super2-ran1-pool5-roskosb-info
   namespace: assisted-installer
   labels:
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: master
     bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
 spec:
   online: true
-  bootMACAddress: 40:A6:B7:51:8A:60
+  bootMACAddress: E4:43:4B:4E:3F:B9
   automatedCleaningMode: disabled
   bmc:
-    address: ipmi://192.168.200.11:623
-    credentialsName: bmc-super2-ran1-roskosb-info
+    address: idrac-virtualmedia://10.1.177.52/redfish/v1/Systems/System.Embedded.1
+    credentialsName: bmc-super2-ran1-pool5-roskosb-info
     disableCertificateVerification: True
 ---
 apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
-  name: super3-ran1-roskosb-info
+  name: super3-ran1-pool5-roskosb-info
   namespace: assisted-installer
   labels:
-    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
   annotations:
     inspect.metal3.io: disabled
     bmac.agent-install.openshift.io/role: master
     bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
 spec:
   online: true
-  bootMACAddress: 40:A6:B7:51:51:C0
+  bootMACAddress: E4:43:4B:56:8B:D1
   automatedCleaningMode: disabled
   bmc:
-    address: redfish-virtualmedia://192.168.200.12/redfish/v1/Systems/1/
-    credentialsName: bmc-super3-ran1-roskosb-info
+    address: idrac-virtualmedia://10.1.177.53/redfish/v1/Systems/System.Embedded.1
+    credentialsName: bmc-super3-ran1-pool5-roskosb-info
     disableCertificateVerification: True
 #---
 #apiVersion: metal3.io/v1alpha1
@@ -144,12 +144,12 @@ spec:
 #  name: cu2-ran1-roskosb-in
 #  namespace: assisted-installer
 #  labels:
-#    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+#    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
 #  annotations:
 #    inspect.metal3.io: disabled
 #    bmac.agent-install.openshift.io/role: worker
 #    bmac.agent-install.openshift.io/installer-args: '["--copy-network"]'
-#    #bmac.agent-install.openshift.io/installer-args: '["--append-karg", "bond=bond0:ens7f0,ens7f1:mode=active-backup ip=10.50.0.152::10.50.0.1:255.255.255.0:cu2.ran1.roskosb.info:bond0:none", "--append-karg", "ip=ens1f0:off", "--append-karg", "ip=ens1f1:off", "--append-karg", "nameserver=10.40.0.100", "--copy-network"]'
+#    #bmac.agent-install.openshift.io/installer-args: '["--append-karg", "bond=bond0:ens7f0,ens7f1:mode=active-backup ip=10.50.0.152::10.50.0.1:255.255.255.0:cu2.ran1.pool5.roskosb.info:bond0:none", "--append-karg", "ip=ens1f0:off", "--append-karg", "ip=ens1f1:off", "--append-karg", "nameserver=10.40.0.100", "--copy-network"]'
 #spec:
 #  online: true
 #  bootMACAddress: 40:A6:B7:3A:CF:20
@@ -165,7 +165,7 @@ spec:
 #  name: mgmt1-ran1-roskosb-in
 #  namespace: assisted-installer
 #  labels:
-#    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+#    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
 #  annotations:
 #    inspect.metal3.io: disabled
 #    bmac.agent-install.openshift.io/role: worker
@@ -187,7 +187,7 @@ spec:
 #  name: du1-fec2-ran1-roskosb-in
 #  namespace: assisted-installer
 #  labels:
-#    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+#    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
 #  annotations:
 #    inspect.metal3.io: disabled
 #    bmac.agent-install.openshift.io/role: worker
@@ -197,7 +197,7 @@ spec:
 #  bootMACAddress: ac:1f:6b:e1:79:ba
 #  automatedCleaningMode: disabled
 #  bmc:
-#    address: redfish-virtualmedia://172.28.11.40/redfish/v1/Systems/1/
+#    address: idrac-virtualmedia://172.28.11.40/redfish/v1/Systems/System.Embedded.1
 #    credentialsName: bmc-du1-fec2-ran1-roskosb-in
 #    disableCertificateVerification: True
 #---
@@ -207,7 +207,7 @@ spec:
 #  name: du1-ldc1-ran1-roskosb-in
 #  namespace: assisted-installer
 #  labels:
-#    infraenvs.agent-install.openshift.io: "infraenv-ran1-roskosb-info"
+#    infraenvs.agent-install.openshift.io: "infraenv-ran1-pool5-roskosb-info"
 #  annotations:
 #    inspect.metal3.io: disabled
 #    bmac.agent-install.openshift.io/role: worker
@@ -217,6 +217,6 @@ spec:
 #  bootMACAddress: 3c:ec:ef:30:52:64
 #  automatedCleaningMode: disabled
 #  bmc:
-#    address: redfish-virtualmedia://172.28.11.42/redfish/v1/Systems/1/
+#    address: idrac-virtualmedia://172.28.11.42/redfish/v1/Systems/System.Embedded.1
 #    credentialsName: bmc-du1-ldc1-ran1-roskosb-in
 #    disableCertificateVerification: True

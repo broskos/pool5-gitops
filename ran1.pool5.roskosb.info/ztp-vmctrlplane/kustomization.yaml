@@ -10,8 +10,8 @@ commonLabels:
   telco-gitops/ztp: combined-ran
 
 resources:
-  - 01-agent-ran1-roskosb-info.yaml
-  - 01-cluster-ran1-roskosb-info.yaml
-  - 01-infraenv-ran1-roskosb-info.yaml
+  - 01-agent-ran1-pool5-roskosb-info.yaml
+  - 01-cluster-ran1-pool5-roskosb-info.yaml
+  - 01-infraenv-ran1-pool5-roskosb-info.yaml
   - 01-nmstate-ran1-skylark-vm-cars-lab.yaml
-# - 02-bmh-ran1-roskosb-info-RWN-VMCTRLPLANE.yaml
+# - 02-bmh-ran1-pool5-roskosb-info-RWN-VMCTRLPLANE.yaml

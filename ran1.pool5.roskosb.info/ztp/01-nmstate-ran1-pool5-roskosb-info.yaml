@@ -2,21 +2,21 @@
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
-  name: nmstate-super1-ran1-roskosb-info
+  name: nmstate-super1-ran1-pool5-roskosb-info
   namespace: assisted-installer
   labels:
     cluster-name: ran1-nmstate
 spec:
   config:
     interfaces:
-      - name: enp0s20f0
-        type: ethernet
+      - name: eno2.309
+        type: vlan
         state: up
         ipv4:
           enabled: true
           address:
-            - ip: 192.168.201.221
-              prefix-length: 24
+            - ip: 10.1.198.147
+              prefix-length: 28
           dhcp: false
     dns-resolver:
       config:
@@ -25,31 +25,31 @@ spec:
     routes:
       config:
         - destination: 0.0.0.0/0
-          next-hop-address: 192.168.201.1
-          next-hop-interface: enp0s20f0
+          next-hop-address: 10.1.198.158
+          next-hop-interface: eno2.309
   interfaces:
-    - name: enp0s20f0
-      macAddress: 0c:c4:7a:6b:80:34
+    - name: eno2.309
+      macAddress: E4:43:4B:4E:40:2D
 
 ---
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
-  name: nmstate-super2-ran1-roskosb-info
+  name: nmstate-super2-ran1-pool5-roskosb-info
   namespace: assisted-installer
   labels:
     cluster-name: ran1-nmstate
 spec:
   config:
     interfaces:
-      - name: enp0s20f0
-        type: ethernet
+      - name: eno2.309
+        type: vlan
         state: up
         ipv4:
           enabled: true
           address:
-            - ip: 192.168.201.222
-              prefix-length: 24
+            - ip: 10.1.198.148
+              prefix-length: 28
           dhcp: false
     dns-resolver:
       config:
@@ -58,31 +58,31 @@ spec:
     routes:
       config:
         - destination: 0.0.0.0/0
-          next-hop-address: 192.168.201.1
-          next-hop-interface: enp0s20f0
+          next-hop-address: 10.1.198.158
+          next-hop-interface: eno2.309
   interfaces:
-    - name: enp0s20f0
-      macAddress: ac:1f:6b:02:10:d4
+    - name: eno2.309
+      macAddress:  E4:43:4B:4E:3F:B9
 
 ---
 apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
-  name: nmstate-super3-ran1-roskosb-info
+  name: nmstate-super3-ran1-pool5-roskosb-info
   namespace: assisted-installer
   labels:
     cluster-name: ran1-nmstate
 spec:
   config:
     interfaces:
-      - name: enp0s20f0
-        type: ethernet
+      - name: eno2.309
+        type: vlan
         state: up
         ipv4:
           enabled: true
           address:
-            - ip: 192.168.201.223
-              prefix-length: 24
+            - ip: 10.1.198.149
+              prefix-length: 28
           dhcp: false
     dns-resolver:
       config:
@@ -91,17 +91,17 @@ spec:
     routes:
       config:
         - destination: 0.0.0.0/0
-          next-hop-address: 192.168.201.1
-          next-hop-interface: enp0s20f0
+          next-hop-address: 10.1.198.158
+          next-hop-interface: eno2.309
   interfaces:
-    - name: enp0s20f0
-      macAddress: ac:1f:6b:02:10:c4
+    - name: eno2.309
+      macAddress: E4:43:4B:56:8B:D1
 
 #---
 #apiVersion: agent-install.openshift.io/v1beta1
 #kind: NMStateConfig
 #metadata:
-#  name: nmstate-cu2-ran1-roskosb-info
+#  name: nmstate-cu2-ran1-pool5-roskosb-info
 #  namespace: assisted-installer
 #  labels:
 #    cluster-name: ran1-nmstate
@@ -115,7 +115,7 @@ spec:
 #          enabled: true
 #          address:
 #            - ip: 10.50.0.152
-#              prefix-length: 24
+#              prefix-length: 28
 #          dhcp: false
 #        link-aggregation:
 #          mode: active-backup
@@ -126,10 +126,10 @@ spec:
 #          - ens7f0
 #          - ens7f1
 #      - name: ens1f0
-#        type: ethernet
+#        type: vlan
 #        state: down
 #      - name: ens1f1
-#        type: ethernet
+#        type: vlan
 #        state: down
 #    dns-resolver:
 #      config:
@@ -153,7 +153,7 @@ spec:
 #apiVersion: agent-install.openshift.io/v1beta1
 #kind: NMStateConfig
 #metadata:
-#  name: nmstate-mgmt1-ran1-roskosb-info
+#  name: nmstate-mgmt1-ran1-pool5-roskosb-info
 #  namespace: assisted-installer
 #  labels:
 #    cluster-name: ran1-nmstate
@@ -167,7 +167,7 @@ spec:
 #          enabled: true
 #          address:
 #            - ip: 172.17.0.101
-#              prefix-length: 24
+#              prefix-length: 28
 #          dhcp: false
 #        link-aggregation:
 #          mode: active-backup
@@ -178,10 +178,10 @@ spec:
 #          - ens7f0
 #          - ens7f1
 #      - name: ens1f0
-#        type: ethernet
+#        type: vlan
 #        state: down
 #      - name: ens1f1
-#        type: ethernet
+#        type: vlan
 #        state: down
 #    dns-resolver:
 #      config:
@@ -205,7 +205,7 @@ spec:
 #apiVersion: agent-install.openshift.io/v1beta1
 #kind: NMStateConfig
 #metadata:
-#  name: nmstate-du1-fec2-ran1-roskosb-info
+#  name: nmstate-du1-fec2-ran1-pool5-roskosb-info
 #  namespace: assisted-installer
 #  labels:
 #    cluster-name: ran1-nmstate
@@ -213,16 +213,16 @@ spec:
 #  config:
 #    interfaces:
 #      - name: ens2f0
-#        type: ethernet
+#        type: vlan
 #        state: up
 #        macAddress: ac:1f:6b:e1:79:ba
 #        ipv4:
 #          address:
 #          - ip: 172.19.0.151
-#            prefix-length: 24
+#            prefix-length: 28
 #          enabled: true
 #      - name: ens2f1
-#        type: ethernet
+#        type: vlan
 #        state: down
 #        macAddress: ac:1f:6b:e1:79:bb
 #    dns-resolver:
@@ -238,7 +238,7 @@ spec:
 #apiVersion: agent-install.openshift.io/v1beta1
 #kind: NMStateConfig
 #metadata:
-#  name: nmstate-du1-ldc1-ran1-roskosb-info
+#  name: nmstate-du1-ldc1-ran1-pool5-roskosb-info
 #  namespace: assisted-installer
 #  labels:
 #    cluster-name: ran1-nmstate
@@ -246,24 +246,24 @@ spec:
 #  config:
 #    interfaces:
 #      - name: eth0
-#        type: ethernet
+#        type: vlan
 #        state: up
 #        macAddress: 3c:ec:ef:30:52:64
 #        ipv4:
 #          address:
 #          - ip: 172.17.0.181
-#            prefix-length: 24
+#            prefix-length: 28
 #          enabled: true
 #      - name: eth1
-#        type: ethernet
+#        type: vlan
 #        state: down
 #        macAddress: 3c:ec:ef:30:52:65
 #      - name: enp81s0f0
-#        type: ethernet
+#        type: vlan
 #        state: down
 #        macAddress: 3c:ec:ef:74:9c:c8
 #      - name: enp138s0f0
-#        type: ethernet
+#        type: vlan
 #        state: down
 #        macAddress: b4:96:91:89:48:44
 #    dns-resolver:
