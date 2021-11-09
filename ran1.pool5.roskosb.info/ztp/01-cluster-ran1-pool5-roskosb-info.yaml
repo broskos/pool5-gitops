@@ -5,7 +5,7 @@ metadata:
   name: cluster-ran1-pool5-roskosb-info
   namespace: assisted-installer
 spec:
-  baseDomain: roskosb.info
+  baseDomain: pool5.roskosb.info
   clusterName: ran1
   controlPlaneConfig:
     servingCertificates: {}
