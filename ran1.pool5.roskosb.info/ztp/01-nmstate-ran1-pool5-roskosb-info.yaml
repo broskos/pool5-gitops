@@ -31,7 +31,7 @@ spec:
           next-hop-address: 10.1.198.158
           next-hop-interface: eno2.309
   interfaces:
-    - name: eno2.309
+    - name: eno2
       macAddress: E4:43:4B:4E:40:2D
 
 ---
@@ -67,7 +67,7 @@ spec:
           next-hop-address: 10.1.198.158
           next-hop-interface: eno2.309
   interfaces:
-    - name: eno2.309
+    - name: eno2
       macAddress:  E4:43:4B:4E:3F:B9
 
 ---
@@ -103,7 +103,7 @@ spec:
           next-hop-address: 10.1.198.158
           next-hop-interface: eno2.309
   interfaces:
-    - name: eno2.309
+    - name: eno2
       macAddress: E4:43:4B:56:8B:D1
 
 #---
