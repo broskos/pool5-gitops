@@ -11,7 +11,7 @@ spec:
     namespace: 'telco-gitops'
     server: 'https://kubernetes.default.svc'
   source:
-    repoURL: 'https://github.com/broskos/pool5-gitops'
+    repoURL: 'https://github.com/broskos/pool5-gitops.git'
     targetRevision: HEAD
     path: mgmt.pool5.roskosb.info
     directory:

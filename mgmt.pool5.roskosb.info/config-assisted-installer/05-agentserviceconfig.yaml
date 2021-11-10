@@ -7,6 +7,13 @@ metadata:
   namespace: assisted-installer
 data:
   LOG_LEVEL: "debug"
+  SUPPORT_L2: "false"
+  DISABLED_HOST_VALIDATIONS: "belongs-to-machine-cidr,belongs-to-majority-group"
+  ISO_IMAGE_TYPE: "full-iso"
+  # stable
+  AGENT_DOCKER_IMAGE: quay.io/ocpmetal/assisted-installer-agent:stable
+  CONTROLLER_IMAGE: quay.io/ocpmetal/assisted-installer-controller:stable
+  INSTALLER_IMAGE: quay.io/ocpmetal/assisted-installer:stable
 ---
 apiVersion: agent-install.openshift.io/v1beta1
 kind: AgentServiceConfig
