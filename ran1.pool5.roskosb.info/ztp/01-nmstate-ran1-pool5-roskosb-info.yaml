@@ -18,6 +18,9 @@ spec:
             - ip: 10.1.198.147
               prefix-length: 28
           dhcp: false
+        vlan:
+          base-iface: eno2
+          id: 309
     dns-resolver:
       config:
         server:
@@ -51,6 +54,9 @@ spec:
             - ip: 10.1.198.148
               prefix-length: 28
           dhcp: false
+        vlan:
+          base-iface: eno2
+          id: 309
     dns-resolver:
       config:
         server:
@@ -84,6 +90,9 @@ spec:
             - ip: 10.1.198.149
               prefix-length: 28
           dhcp: false
+        vlan:
+          base-iface: eno2
+          id: 309
     dns-resolver:
       config:
         server:
