@@ -9,6 +9,27 @@ metadata:
 spec:
   config:
     interfaces:
+      - name: eno1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f0
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
       - name: eno2.309
         type: vlan
         state: up
@@ -24,7 +45,8 @@ spec:
     dns-resolver:
       config:
         server:
-          - 10.1.196.1
+          - 10.11.142.1
+          - 10.11.142.2
     routes:
       config:
         - destination: 0.0.0.0/0
@@ -45,6 +67,27 @@ metadata:
 spec:
   config:
     interfaces:
+      - name: eno1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f0
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
       - name: eno2.309
         type: vlan
         state: up
@@ -60,7 +103,8 @@ spec:
     dns-resolver:
       config:
         server:
-          - 10.1.196.1
+          - 10.11.142.1
+          - 10.11.142.2
     routes:
       config:
         - destination: 0.0.0.0/0
@@ -81,6 +125,27 @@ metadata:
 spec:
   config:
     interfaces:
+      - name: eno1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f0
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
       - name: eno2.309
         type: vlan
         state: up
@@ -96,7 +161,8 @@ spec:
     dns-resolver:
       config:
         server:
-          - 10.1.196.1
+          - 10.11.142.1
+          - 10.11.142.2
     routes:
       config:
         - destination: 0.0.0.0/0
