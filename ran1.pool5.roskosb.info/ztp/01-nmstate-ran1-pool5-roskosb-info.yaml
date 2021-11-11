@@ -45,8 +45,7 @@ spec:
     dns-resolver:
       config:
         server:
-          - 10.11.142.1
-          - 10.11.142.2
+          - 10.1.196.1
     routes:
       config:
         - destination: 0.0.0.0/0
@@ -103,8 +102,7 @@ spec:
     dns-resolver:
       config:
         server:
-          - 10.11.142.1
-          - 10.11.142.2
+          - 10.1.196.1
     routes:
       config:
         - destination: 0.0.0.0/0
@@ -161,8 +159,7 @@ spec:
     dns-resolver:
       config:
         server:
-          - 10.11.142.1
-          - 10.11.142.2
+          - 10.1.196.1
     routes:
       config:
         - destination: 0.0.0.0/0
