@@ -42,7 +42,7 @@ type: Opaque
 apiVersion: v1
 kind: Secret
 metadata:
-  name: bmc-worker1-ran1-pool5-roskosb-in
+  name: bmc-worker2-ran1-pool5-roskosb-in
   namespace: assisted-installer
 data:
   username: cm9vdA==
