@@ -195,7 +195,7 @@ spec:
 #spec:
 #  online: true
 #  bootMACAddress: ac:1f:6b:e1:79:ba
-#  automatedCleaningMode: disabled
+#  automatedCleaningMode: enabled
 #  bmc:
 #    address: idrac-virtualmedia://172.28.11.40/redfish/v1/Systems/System.Embedded.1
 #    credentialsName: bmc-du1-fec2-ran1-roskosb-in
@@ -215,7 +215,7 @@ spec:
 #spec:
 #  online: true
 #  bootMACAddress: 3c:ec:ef:30:52:64
-#  automatedCleaningMode: disabled
+#  automatedCleaningMode: enabled
 #  bmc:
 #    address: idrac-virtualmedia://172.28.11.42/redfish/v1/Systems/System.Embedded.1
 #    credentialsName: bmc-du1-ldc1-ran1-roskosb-in

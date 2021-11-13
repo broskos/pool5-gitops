@@ -169,6 +169,119 @@ spec:
     - name: eno2
       macAddress: E4:43:4B:56:8B:D1
 
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: nmstate-worker1-ran1-pool5-roskosb-info
+  namespace: assisted-installer
+  labels:
+    cluster-name: ran1-nmstate
+spec:
+  config:
+    interfaces:
+      - name: eno1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f0
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: eno2.309
+        type: vlan
+        state: up
+        ipv4:
+          enabled: true
+          address:
+            - ip: 10.1.198.150
+              prefix-length: 28
+          dhcp: false
+        vlan:
+          base-iface: eno2
+          id: 309
+    dns-resolver:
+      config:
+        server:
+          - 10.1.196.1
+    routes:
+      config:
+        - destination: 0.0.0.0/0
+          next-hop-address: 10.1.198.158
+          next-hop-interface: eno2.309
+  interfaces:
+    - name: eno2
+      macAddress: E4:43:4B:56:89:B9
+
+---
+apiVersion: agent-install.openshift.io/v1beta1
+kind: NMStateConfig
+metadata:
+  name: nmstate-worker2-ran1-pool5-roskosb-info
+  namespace: assisted-installer
+  labels:
+    cluster-name: ran1-nmstate
+spec:
+  config:
+    interfaces:
+      - name: eno1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f0
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: ens3f1
+        type: ethernet
+        state: down
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: eno2.309
+        type: vlan
+        state: up
+        ipv4:
+          enabled: true
+          address:
+            - ip: 10.1.198.151
+              prefix-length: 28
+          dhcp: false
+        vlan:
+          base-iface: eno2
+          id: 309
+    dns-resolver:
+      config:
+        server:
+          - 10.1.196.1
+    routes:
+      config:
+        - destination: 0.0.0.0/0
+          next-hop-address: 10.1.198.158
+          next-hop-interface: eno2.309
+  interfaces:
+    - name: eno2
+      macAddress: E4:43:4B:4E:44:B1
 #---
 #apiVersion: agent-install.openshift.io/v1beta1
 #kind: NMStateConfig
