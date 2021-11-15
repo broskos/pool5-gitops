@@ -11,7 +11,7 @@ spec:
   apiVIP: 10.1.198.145
   ingressVIP: 10.1.198.146
   clusterDeploymentRef:
-    name: aci-ran1-pool5-roskosb-info
+    name: cluster-ran1-pool5-roskosb-info
   imageSetRef:
     name: openshift-v4.8.12
 #  manifestsConfigMapRef:
