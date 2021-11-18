@@ -24,6 +24,7 @@ bases:
 #  # OpenShift Logging
 #  # - ../../base/operators/openshift-logging
   - github.com/openshift-telco/telco-gitops/base/operators/openshift-logging?ref=main
+  - ./config-chrony
 
 patches:
 #  - ./00-patch.yaml
